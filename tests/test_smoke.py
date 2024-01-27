@@ -8,4 +8,4 @@ class Testa:
         assert t(), True
 
     def test_smoke2(self):
-        assert f(), True
+        assert f(), False
