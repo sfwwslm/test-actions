@@ -17,10 +17,10 @@ jobs:
     strategy:
       fail-fast: false # 在一个版本失败时停止所有的测试
       matrix:
-        python-version: ["3.11"] # 使用这两个版本测试
+        python-version: ["3.10", "3.11"] # 使用这两个版本测试
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
 
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
@@ -35,10 +35,3 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-
-    - name: Upload test coverage
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: coverage
-        path: tests/ok
