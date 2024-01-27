@@ -38,7 +38,7 @@ jobs:
 
     - name: Upload test coverage
       if: always()
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
-        name: 覆盖范围
+        name: coverage
         path: tests/ok
